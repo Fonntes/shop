@@ -1,16 +1,19 @@
 package com.backend.BackendShop.model;
 
-import lombok.Data;
-import org.springframework.data.annotation.Id;
-import org.springframework.data.mongodb.core.mapping.Document;
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 import java.io.Serializable;
 
-@Document
-@Data
+@Entity
 public class Product implements Serializable {
     @Id
-    private String produrct_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(nullable = false, updatable = false)
+    private Long id;
     private String name;
     private double price;
     private int quantity;
@@ -19,12 +22,14 @@ public class Product implements Serializable {
     private String imageUrl;
     private String description;
     private int active;
+
+    @Column(nullable = false, updatable = false)
     private String productCode;
 
     public Product() {}
 
-    public Product(String produrct_id, String name, double price, int quantity, GENDER gender, double size, String imageUrl, String description, int active, String productCode) {
-        this.produrct_id = produrct_id;
+    public Product(Long id, String name, double price, int quantity, GENDER gender, double size, String imageUrl, String description, int active, String productCode) {
+        this.id = id;
         this.name = name;
         this.price = price;
         this.quantity = quantity;
@@ -36,12 +41,12 @@ public class Product implements Serializable {
         this.productCode = productCode;
     }
 
-    public String getProdurct_id() {
-        return produrct_id;
+    public Long getId() {
+        return id;
     }
 
-    public void setProdurct_id(String produrct_id) {
-        this.produrct_id = produrct_id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getName() {
@@ -119,7 +124,7 @@ public class Product implements Serializable {
     @Override
     public String toString() {
         return "Product{" +
-                "produrct_id=" + produrct_id +
+                "id=" + id +
                 ", name='" + name + '\'' +
                 ", price=" + price +
                 ", quantity=" + quantity +
@@ -128,7 +133,7 @@ public class Product implements Serializable {
                 ", imageUrl='" + imageUrl + '\'' +
                 ", description='" + description + '\'' +
                 ", active=" + active +
-                ", ProductCode='" + productCode + '\'' +
+                ", productCode='" + productCode + '\'' +
                 '}';
     }
 }

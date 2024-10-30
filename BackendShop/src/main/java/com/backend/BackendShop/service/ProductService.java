@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 @Service
@@ -24,18 +25,5 @@ public class ProductService {
 
     public List<Product> findAllProducts() {
         return productRepo.findAll();
-    }
-
-    public Product findProductById(String id) {
-            return productRepo.findProductBy(id);
-                    //.orElseThrow(()-> new UserNotFoundException("user by id:" + id + " not found."));
-    }
-
-    public Product updateProduct(Product product) {
-        return productRepo.save(product);
-    }
-
-    public void deleteProduct(Product product) {
-        productRepo.delete(product);
     }
 }

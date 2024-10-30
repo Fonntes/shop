@@ -1,8 +1,10 @@
 package com.backend.BackendShop.Repository;
 
 import com.backend.BackendShop.model.Product;
-import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface ProductRepo extends MongoRepository<Product, String> {
-    Product findProductBy(String id);
+import java.util.Optional;
+
+public interface ProductRepo extends JpaRepository<Product, Long> {
+    Optional<Product> findById(Long id);
 }
