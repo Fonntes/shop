@@ -1,7 +1,7 @@
-package com.backend.Shop.resouce;
+package com.backend.BackendShop.resouce;
 
-import com.backend.Shop.model.Product;
-import com.backend.Shop.service.ProductService;
+import com.backend.BackendShop.model.Product;
+import com.backend.BackendShop.service.ProductService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

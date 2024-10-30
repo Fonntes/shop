@@ -1,7 +1,7 @@
-package com.backend.Shop.service;
+package com.backend.BackendShop.service;
 
-import com.backend.Shop.Repository.ProductRepo;
-import com.backend.Shop.model.Product;
+import com.backend.BackendShop.Repository.ProductRepo;
+import com.backend.BackendShop.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

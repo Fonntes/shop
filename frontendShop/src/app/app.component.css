@@ -1,0 +1,7 @@
+/* app.component.css */
+.product-image {
+  max-width: 125px; /* Define o tamanho máximo da largura da imagem */
+  max-height: 125px; /* Define o tamanho máximo da altura da imagem */
+  width: auto; /* Mantém a proporção da imagem */
+  height: auto; /* Mantém a proporção da imagem */
+}
